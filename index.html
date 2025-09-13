@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नवरात्रि की हार्दिक शुभकामनाएँ!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        html, body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            width: 100%;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(to top right, #fceabb, #fbefc1, #fbd89a); /* Navratri-specific background */
+            color: #333;
+            text-align: center;
+            position: relative;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            max-width: 90%; /* Adjust max-width for better mobile fit */
+            width: 550px;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-out;
+            position: relative;
+            z-index: 2;
+            border: 5px solid #ff7043; /* Warm orange border */
+            margin-top: 20px; /* Add some top margin */
+            margin-bottom: 20px; /* Add some bottom margin */
+        }
+        h1 {
+            color: #d84315;
+            margin-bottom: 20px;
+            font-size: 2.8em;
+            animation: pulse 1.5s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        p {
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .sender-name {
+            font-weight: bold;
+            color: #e65100;
+            font-size: 1.1em;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            animation: float 3s ease-in-out infinite;
+            border: 3px solid #ffa726; /* Bright orange border for image */
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 2px solid #ff7043; /* Orange border for input */
+            border-radius: 10px;
+            font-size: 1.1em;
+            box-sizing: border-box;
+            text-align: center; /* Center align text in input */
+        }
+        button {
+            background-color: #ff7043; /* Navratri orange */
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px; /* Add margin for multiple buttons */
+            display: inline-flex; /* For icon and text alignment */
+            align-items: center;
+            justify-content: center;
+            gap: 8px; /* Space between icon and text */
+        }
+        button:hover {
+            background-color: #f4511e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        .share-link-container {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .share-link {
+            background-color: #fff8e1; /* Lighter background for link */
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-size: 1em;
+            word-break: break-all;
+            width: calc(100% - 36px);
+            text-align: left;
+            border: 1px dashed #ff9800; /* Dashed orange border */
+        }
+        .copy-button {
+            background-color: #4CAF50;
+            margin-top: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+        .copy-button:hover {
+            background-color: #43a047;
+        }
+
+        .share-buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+            width: 100%;
+            align-items: center;
+        }
+        .share-buttons-group button {
+            width: fit-content; /* Adjust width to content */
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+        /* Primary share button style */
+        .primary-share-button {
+            background-color: #007bff; /* A nice blue for general share */
+            padding: 14px 30px;
+            font-size: 1.2em;
+        }
+        .primary-share-button:hover {
+            background-color: #0056b3;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+        }
+        .whatsapp-button:hover {
+            background-color: #1DA851;
+        }
+
+
+        /* Firecracker Effect (updated colors for Navratri) */
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ffd54f; /* Yellowish-orange */
+            border-radius: 50%;
+            opacity: 0;
+            animation: fireworkExplode 1.5s forwards;
+            filter: blur(1px);
+        }
+
+        @keyframes fireworkExplode {
+            0% {
+                transform: translate(var(--x), var(--y)) scale(0.2);
+                opacity: 1;
+                box-shadow: 0 0 10px #ffee58, 0 0 20px #ffc107;
+            }
+            20% {
+                transform: translate(var(--x), var(--y)) scale(1);
+                opacity: 1;
+                box-shadow: 0 0 20px #ffee58, 0 0 30px #ffc107, 0 0 40px #ff9800;
+            }
+            100% {
+                transform: translate(var(--x), var(--y)) scale(1.5);
+                opacity: 0;
+                box-shadow: 0 0 30px #ffee58, 0 0 50px #ffc107, 0 0 70px #ff9800;
+            }
+        }
+
+        /* General Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Decorative Elements - Garba Dancer Silhouettes (conceptual, requires images) */
+        .garba-dancer {
+            position: absolute;
+            width: 100px; /* Adjust size as needed */
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1; /* Subtle */
+            pointer-events: none;
+            z-index: 1;
+            animation: dance 10s linear infinite;
+        }
+        .garba-dancer-left {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="#f4511e" d="M100 0c-55.23 0-100 44.77-100 100S44.77 200 100 200s100-44.77 100-100S155.23 0 100 0zM140 120h-80a10 10 0 0 0-10 10v20a10 10 0 0 0 10 10h80a10 10 0 0 0 10-10v-20a10 10 0 0 0-10-10zM100 40a20 20 0 1 0 0 40a20 20 0 0 0 0-40zM70 100l-20 40h20l10-20zM130 100l20 40h-20l-10-20z"/></svg>'); /* Generic person-like silhouette for example */
+            left: -50px; /* Start off screen */
+            bottom: 50px;
+            animation-delay: 0s;
+            transform: scaleX(-1); /* Flip for left */
+        }
+        .garba-dancer-right {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="#f4511e" d="M100 0c-55.23 0-100 44.77-100 100S44.77 200 100 200s100-44.77 100-100S155.23 0 100 0zM140 120h-80a10 10 0 0 0-10 10v20a10 10 0 0 0 10 10h80a10 10 0 0 0 10-10v-20a10 10 0 0 0-10-10zM100 40a20 20 0 1 0 0 40a20 20 0 0 0 0-40zM70 100l-20 40h20l10-20zM130 100l20 40h-20l-10-20z"/></svg>'); /* Generic person-like silhouette for example */
+            right: -50px; /* Start off screen */
+            top: 100px;
+            animation-delay: 5s;
+        }
+
+        @keyframes dance {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(100vw + 100px)); } /* Move across screen */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="greeting-message">नवरात्रि की हार्दिक शुभकामनाएँ!</h1>
+        <p>आपको और आपके परिवार को <span class="sender-name" id="sender-display-text"></span> की तरफ से नवरात्रि की हार्दिक शुभकामनाएँ!</p>
+        <img src="navratra.gif" alt="Navratri Celebrations GIF"> <!-- अपनी Navratri GIF यहाँ रखें -->
+        <input type="text" id="nameInput" placeholder="अपना नाम यहाँ लिखें">
+        
+        <!-- WhatsApp बटन अब ऊपर है -->
+        <button class="whatsapp-button" onclick="prepareAndShare()">
+            <i class="fab fa-whatsapp"></i> WhatsApp पर भेजें
+        </button>
+        <!-- सामान्य शेयर बटन अब नीचे है -->
+        <button class="primary-share-button" onclick="prepareAndShareNative()">
+            <i class="fas fa-share-alt"></i> शुभकामनाएँ शेयर करें
+        </button>
+
+        <div id="shareLinkContainer" class="share-link-container" style="display: none;">
+            <p>यह रहा आपका शेयर करने वाला लिंक (आप इसे कॉपी भी कर सकते हैं):</p>
+            <div class="share-link" id="generatedLink"></div>
+            <button class="copy-button" onclick="copyLink()">लिंक कॉपी करें</button>
+        </div>
+    </div>
+
+    <!-- सजावटी तत्व (वैकल्पिक: अगर आपके पास गरबा डांसर की असली सिल्हूट्स हैं तो बदल दें) -->
+    <div class="garba-dancer garba-dancer-left"></div>
+    <div class="garba-dancer garba-dancer-right"></div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const sender = urlParams.get('sender');
+        const greetingMessage = document.getElementById('greeting-message');
+        const senderDisplayText = document.getElementById('sender-display-text');
+        const nameInput = document.getElementById('nameInput');
+        const generatedLinkDiv = document.getElementById('generatedLink');
+        const shareLinkContainer = document.getElementById('shareLinkContainer');
+        let currentShareableLink = ""; // generated link को स्टोर करने के लिए
+
+        if (sender) {
+            senderDisplayText.textContent = decodeURIComponent(sender);
+            nameInput.value = decodeURIComponent(sender);
+            firecrackerAnimation(); // आने पर फायरक्रैकर एनिमेशन शुरू करें
+        } else {
+            senderDisplayText.textContent = "एक प्रिय मित्र"; // यदि कोई भेजने वाला नहीं है तो डिफ़ॉल्ट टेक्स्ट
+        }
+
+        function generateLinkOnly() {
+            const name = nameInput.value.trim();
+            if (name) {
+                const baseUrl = window.location.origin + window.location.pathname;
+                currentShareableLink = `${baseUrl}?sender=${encodeURIComponent(name)}`;
+                generatedLinkDiv.textContent = currentShareableLink;
+                shareLinkContainer.style.display = 'flex';
+                firecrackerAnimation();
+                return true; // Indicate success
+            } else {
+                alert("कृपया अपना नाम यहाँ लिखें!");
+                return false; // Indicate failure
+            }
+        }
+
+        function prepareAndShare() { // For WhatsApp
+            if (generateLinkOnly()) { // पहले लिंक जनरेट करें
+                shareOnWhatsApp(); // फिर WhatsApp पर शेयर करें
+            }
+        }
+
+        function prepareAndShareNative() { // For general native share
+            if (generateLinkOnly()) { // पहले लिंक जनरेट करें
+                shareViaNative(); // फिर Native share करें
+            }
+        }
+
+        function copyLink() {
+            if (!currentShareableLink) {
+                 if (!generateLinkOnly()) return; // Try to generate if not already
+            }
+            navigator.clipboard.writeText(currentShareableLink).then(() => {
+                alert("लिंक कॉपी हो गया है! अब आप इसे शेयर कर सकते हैं।");
+            }).catch(err => {
+                console.error('लिंक कॉपी करने में असफल:', err);
+                alert("लिंक कॉपी नहीं हो पाया, कृपया मैन्युअल रूप से कॉपी करें।");
+            });
+        }
+
+        function shareOnWhatsApp() {
+            if (!currentShareableLink) {
+                alert("कृपया पहले अपना नाम लिखकर लिंक बनाएँ!");
+                return;
+            }
+            const message = `आपको और आपके परिवार को नवरात्रि की हार्दिक शुभकामनाएँ! ✨ इस सुंदर संदेश को देखने के लिए क्लिक करें: ${currentShareableLink}`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        function shareViaNative() {
+            if (!currentShareableLink) {
+                alert("कृपया पहले अपना नाम लिखकर लिंक बनाएँ!");
+                return;
+            }
+            const message = `आपको और आपके परिवार को नवरात्रि की हार्दिक शुभकामनाएँ! ✨`;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'नवरात्रि की शुभकामनाएँ!',
+                    text: message,
+                    url: currentShareableLink,
+                }).then(() => {
+                    console.log('सफलतापूर्वक शेयर किया गया');
+                }).catch((error) => {
+                    console.error('शेयर करने में त्रुटि:', error);
+                });
+            } else {
+                alert("आपका ब्राउज़र सीधे शेयर करने की सुविधा का समर्थन नहीं करता है। कृपया लिंक कॉपी करें।");
+            }
+        }
+
+        function firecrackerAnimation() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    createFirework();
+                }, i * 200);
+            }
+        }
+
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.classList.add('firework');
+            document.body.appendChild(firework);
+
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight * 0.7;
+
+            firework.style.setProperty('--x', `${x}px`);
+            firework.style.setProperty('--y', `${y}px`);
+            firework.style.left = `${x}px`;
+            firework.style.top = `${y}px`;
+
+            firework.style.animationDuration = `${Math.random() * 1 + 1.5}s`;
+            firework.style.backgroundColor = `hsl(${Math.random() * 60 + 30}, 90%, 70%)`;
+
+            firework.addEventListener('animationend', () => {
+                firework.remove();
+            });
+        }
+
+        // Initial firecracker burst if sender name is present
+        if (sender) {
+            firecrackerAnimation();
+        }
+    </script>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'f21daf78d964124e8d91dd56af8e362c',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/f21daf78d964124e8d91dd56af8e362c/invoke.js"></script>
+</body>
+</html>
